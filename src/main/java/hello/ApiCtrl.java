@@ -12,6 +12,7 @@ public class ApiCtrl {
     @RequestMapping("/create")
     public Content create(@RequestParam(value="content") String content) {
         Content c = new Content();
+        hhhh
         c.setContent(content);
         c.setTimeStamp(LocalDateTime.now().toString());
 
