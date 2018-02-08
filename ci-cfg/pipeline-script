@@ -9,7 +9,7 @@ pipeline {
         stage('mvn build'){
 	    	steps {
 	    	    echo "===========mvn构建==========="
-	        	sh "mvn clean package
+	        	sh "mvn clean package"
 	        }
 		}
 
