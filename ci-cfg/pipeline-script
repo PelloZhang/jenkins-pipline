@@ -17,7 +17,7 @@ pipeline {
 		stage('deploy'){
             steps {
                 echo "===========部署==========="
-                sh "nohup java -jar target/jenkins-pipline-1.0-SNAPSHOT.jar &"
+                sh "java -jar target/jenkins-pipline-1.0-SNAPSHOT.jar"
             }
         }
 
