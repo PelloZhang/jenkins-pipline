@@ -1,0 +1,63 @@
+pipeline {
+    tools {
+        maven 'maven'
+        jdk 'jdk1.8'
+    }
+
+    stages {
+
+        stage('mvn build'){
+	    	steps {
+	    	    echo "===========mvn构建==========="
+	        	sh "mvn clean package
+	        }
+		}
+
+	}
+
+	post {
+        success{
+			emailext body: '''<hr/>
+
+			(本邮件是程序自动下发的，请勿回复！)<br/><hr/>
+
+			项目名称：$PROJECT_NAME<br/><hr/>
+
+			构建编号：$BUILD_NUMBER<br/><hr/>
+
+			构建状态：$BUILD_STATUS<br/><hr/>
+
+			触发原因：${CAUSE}<br/><hr/>
+
+			构建UI地址：<a href="$PROJECT_URL">$PROJECT_URL</a><br/><hr/>
+
+			构建用户名密码：admin/66666<br/><hr/>
+
+			项目部署地址：<a href="http://172.31.25.200:8082">http://172.31.25.200:8082</a><br/><hr/>
+
+			项目用户名密码：manager/rzxidc2017<br/><hr/>
+
+			变更集:${JELLY_SCRIPT,template="html"}<br/><hr/>''', subject: '构建通知：$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'zhangpeng@act-telecom.com'
+		}
+
+		failure{
+			emailext body: '''<hr/>
+
+			(本邮件是程序自动下发的，请勿回复！)<br/><hr/>
+
+			项目名称：$PROJECT_NAME<br/><hr/>
+
+			构建编号：$BUILD_NUMBER<br/><hr/>
+
+			构建状态：$BUILD_STATUS<br/><hr/>
+
+			触发原因：${CAUSE}<br/><hr/>
+
+			构建UI地址：<a href="$PROJECT_URL">$PROJECT_URL</a><br/><hr/>
+
+			项目用户名密码：admin/66666<br/><hr/>
+
+			变更集:${JELLY_SCRIPT,template="html"}<br/><hr/>''', subject: '构建通知：$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'zhangpeng@act-telecom.com'
+		}
+    }
+}
