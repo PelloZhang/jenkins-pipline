@@ -17,7 +17,8 @@ pipeline {
 		stage('deploy'){
             steps {
                 echo "===========部署==========="
-                sh "java -jar target/jenkins-pipline-1.0-SNAPSHOT.jar"
+                sh "nohup java -jar target/jenkins-pipline-1.0-SNAPSHOT.jar &"
+                sh "sleep 15"
             }
         }
 
