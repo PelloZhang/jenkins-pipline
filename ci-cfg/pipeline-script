@@ -14,6 +14,20 @@ pipeline {
 	        }
 		}
 
+		stage('deploy'){
+            steps {
+                echo "===========部署==========="
+                sh "nohup java -jar target/jenkins-pipline-1.0-SNAPSHOT.jar &"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "===========测试==========="
+                sh "newman run ci-cfg/postman_json/apiTest.json"
+            }
+        }
+
 	}
 
 	post {

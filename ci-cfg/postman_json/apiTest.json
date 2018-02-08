@@ -1,0 +1,173 @@
+{
+	"id": "b877dda7-acf3-4d20-a679-b704bf5844ad",
+	"name": "Jenkins-pipline",
+	"allTests": [],
+	"timestamp": "2018-02-08T10:41:46.511Z",
+	"collection_id": "4aa9649d-dc60-8660-6639-de95f55c5640",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "no-environment",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "4aa9649d-dc60-8660-6639-de95f55c5640",
+		"name": "Jenkins-pipline",
+		"description": "",
+		"order": [
+			"e20b66ea-1e49-8959-8edc-aae7f5237d1a",
+			"1cf0c4c1-fa33-368a-c475-e24cb06db27f"
+		],
+		"folders": [],
+		"folders_order": [],
+		"timestamp": 1518078117388,
+		"synced": false,
+		"remote_id": 0,
+		"owner": "2859116",
+		"sharedWithTeam": false,
+		"subscribed": false,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"createdAt": 1518078117388,
+		"updatedAt": 1518085922404,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"events": [],
+		"variables": [],
+		"auth": null
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "http://127.0.0.1:8080/login",
+			"id": "e20b66ea-1e49-8959-8edc-aae7f5237d1a",
+			"url": "http://127.0.0.1:8081/login",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"成功登陆返回值应该是 200": true,
+				"成功登陆返回中应该包括 Welcome!": true
+			},
+			"testPassFailCounts": {
+				"成功登陆返回值应该是 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"成功登陆返回中应该包括 Welcome!": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"50"
+			],
+			"allTests": [
+				{
+					"成功登陆返回值应该是 200": true,
+					"成功登陆返回中应该包括 Welcome!": true
+				}
+			],
+			"time": "50",
+			"totalRequestTime": "50",
+			"iterationResults": {}
+		},
+		{
+			"name": "http://127.0.0.1:8080/create",
+			"id": "1cf0c4c1-fa33-368a-c475-e24cb06db27f",
+			"url": "http://127.0.0.1:8081/create?content=123",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Your test name": true
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"8"
+			],
+			"allTests": [
+				{
+					"Your test name": true
+				}
+			],
+			"time": "8",
+			"totalRequestTime": "8",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 3,
+	"totalFail": 0,
+	"totalTime": 58,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "http://127.0.0.1:8080/login",
+			"id": "e20b66ea-1e49-8959-8edc-aae7f5237d1a",
+			"url": "http://127.0.0.1:8081/login",
+			"time": "2018-02-08T10:41:46.511Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"成功登陆返回值应该是 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"成功登陆返回中应该包括 Welcome!": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "http://127.0.0.1:8080/create",
+			"id": "1cf0c4c1-fa33-368a-c475-e24cb06db27f",
+			"url": "http://127.0.0.1:8081/create?content=123",
+			"time": "2018-02-08T10:41:46.511Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
